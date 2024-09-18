@@ -3,72 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carousel with Tailwind</title>
+  <title>ECAMS Billboard Display</title>
+  <link rel="stylesheet" href="styles.css">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-100 m-0 p-0">
 
-  <div class="container mx-auto py-10">
-    <div class="relative overflow-hidden w-full">
-      
-      <!-- Carousel Wrapper -->
-      <div class="carousel flex transition-transform ease-in-out duration-700">
-        <!-- Slide 1 -->
-        <div class="carousel-item w-full flex-shrink-0">
-          <img class="w-full h-64 object-cover" src="https://via.placeholder.com/800x400?text=Slide+1" alt="Slide 1">
-        </div>
-
-        <!-- Slide 2 -->
-        <div class="carousel-item w-full flex-shrink-0">
-          <img class="w-full h-64 object-cover" src="https://via.placeholder.com/800x400?text=Slide+2" alt="Slide 2">
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="carousel-item w-full flex-shrink-0">
-          <img class="w-full h-64 object-cover" src="https://via.placeholder.com/800x400?text=Slide+3" alt="Slide 3">
-        </div>
-      </div>
-      
-      <!-- Controls -->
-      <button id="prev" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full">❮</button>
-      <button id="next" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full">❯</button>
+  <div class="carousel-wrapper relative overflow-hidden w-full">
+    <!-- Carousel container -->
+    <div class="carousel flex transition-transform ease-in-out duration-700 h-full">
+      <!-- Carousel slides will be inserted here -->
     </div>
+    
+    <!-- Navigation buttons -->
+    <button id="prev" class="control-button absolute top-1/2 left-2 transform -translate-y-1/2 p-2 rounded-full">❮</button>
+    <button id="next" class="control-button absolute top-1/2 right-2 transform -translate-y-1/2 p-2 rounded-full">❯</button>    
   </div>
 
-  <script>
-    const carousel = document.querySelector('.carousel');
-    const items = document.querySelectorAll('.carousel-item');
-    const prevButton = document.getElementById('prev');
-    const nextButton = document.getElementById('next');
-    
-    let currentIndex = 0;
-
-    // Move carousel to the next slide
-    nextButton.addEventListener('click', () => {
-      if (currentIndex < items.length - 1) {
-        currentIndex++;
-      } else {
-        currentIndex = 0; // Loop back to the first slide
-      }
-      updateCarousel();
-    });
-
-    // Move carousel to the previous slide
-    prevButton.addEventListener('click', () => {
-      if (currentIndex > 0) {
-        currentIndex--;
-      } else {
-        currentIndex = items.length - 1; // Loop to the last slide
-      }
-      updateCarousel();
-    });
-
-    // Function to update the carousel position
-    function updateCarousel() {
-      const translateX = -currentIndex * 100;
-      carousel.style.transform = `translateX(${translateX}%)`;
-    }
-  </script>
-
+  <script src="index.js"></script>
 </body>
 </html>

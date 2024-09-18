@@ -1,0 +1,28 @@
+/* Full viewport height for carousel wrapper so that it's proportionate to display */
+.carousel-wrapper {
+    height: 100vh;
+  }
+  
+  /* Center everything within carousel slides */
+  .carousel-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Ensure images fit within their container */
+  .carousel-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  
+  /* Carousel buttons */
+  .control-button {
+    background-color: #930631;
+    color: #ffffff;
+  }
+  
+  .control-button:hover {
+    background-color: #620421;
+  }  
