@@ -25,4 +25,11 @@
   
   .control-button:hover {
     background-color: #620421;
-  }  
+  }
+  
+  /* QR Code Centering */
+  .hub-QR {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
